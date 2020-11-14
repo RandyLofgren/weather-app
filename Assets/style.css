@@ -42,3 +42,8 @@ h5{
   .uv-indexapi{
       width: 18%;
   }
+
+  .cityapi{
+      font-size: 25px;
+      font-weight: bold;
+  }

@@ -18,15 +18,17 @@ function displayCityInfo() {
 
     var iconGrab = (response.weather[0].icon);
     var icon = "http://openweathermap.org/img/wn/" + iconGrab + "@2x.png";
-    var myDate = new Date(1605311332 * 1000);
-
+    var myDate = new Date();
+     var myDateString = myDate.toLocaleString()
+     
+     
     $("#cloudIcon").attr("src", icon);
     $(".cityapi").text(response.name + "  ");
     $(".windapi").text("Wind: " + response.wind.speed + "MPH");
     $(".humidityapi").text("Humidity: " + response.main.humidity + "%");
     $(".tempapi").text("Temp: " + response.main.temp + " \u00B0F");
 
-    $("#cityID").append(myDate.toGMTString() + "<br>" + myDate.toLocaleString());
+    $("#cityID").append(myDate.toLocaleString());
 
     var lon = (response.coord.lon)
     var lat = (response.coord.lat)
@@ -99,36 +101,37 @@ function fiveCityInfo() {
   }).then(function (fiveresponse) {
     console.log(fiveresponse)
     results = fiveresponse.list
+    var currentDate = new Date().getDate();
+    var currentMonth =new Date().getMonth();
+    var currentYear = new Date().getFullYear()
+    var currentTime = currentDate + currentMonth;
+    
 
-    for (var i = 0; i < 39; i = i + 8) {
+    for (var i = 7; i < 40; i = i + 7) {
       fiveDayDiv = $("<div>");
       p = $("<p>");
-      p.text(results[i].dt);
+      p.text(((currentMonth+1) +'/' + (currentDate+i/7) + '/' + currentYear));
       fiveDayDiv.addClass("col");
-      fiveDayDiv.addClass("five-day")
-      fiveDayDiv.addClass("rounded")
+      fiveDayDiv.addClass("five-day");
+      fiveDayDiv.addClass("rounded");
       fiveDayDiv.append(p);
       $("#fiveDayCast").append(fiveDayDiv);
       cloudImage = $("<img>")
-      cloudImage.attr("src", results[i].weather.icon)
+      cloudImage.attr("src", results[i].weather.icon);
       fiveDayDiv.append(cloudImage)
       ptemp= $("<h6>")
-      ptemp.text("Temp: " + results[i].main.temp + "\u00B0F")
-      fiveDayDiv.append(ptemp)
-      phum= $("<h5>")
-      phum.text("Humidity: " + results[i].main.humidity + "%")
-      fiveDayDiv.append(phum)
+      ptemp.text("Temp: " + results[i].main.temp + "\u00B0F");
+      fiveDayDiv.append(ptemp);
+      phum= $("<h5>");
+      phum.text("Humidity: " + results[i].main.humidity + "%");
+      fiveDayDiv.append(phum);
 
 
 
     }
 
 
-    // // Make an image tag with jQuery and store it in a variable named animalImage.
-    // animalImage = $("<img>")
-    // // Set the image's src to results[i]'s fixed_height.url.
-    // animalImage.attr("src", results[i].images.fixed_height.url);
-    // animalDiv.append(animalImage)
+    
 
 
 
@@ -146,4 +149,3 @@ $(document).on("click", ".city", fiveCityInfo);
 
 
 renderButtons();
-
