@@ -6,7 +6,7 @@
     color:black
 }
 .five-day{
-    background-color: rgb(88, 137, 228);
+    background-color: rgb(27, 119, 206);
     margin: 5px;
 
 }
@@ -34,9 +34,11 @@
 
 h5{
     font-size: 15px;
+    color: white;
 }
   h6{
       font-size: 15px;
+      color: white;
   }
 
   .uv-indexapi{
@@ -46,4 +48,8 @@ h5{
   .cityapi{
       font-size: 25px;
       font-weight: bold;
+  }
+
+  p{
+      color: white;
   }
