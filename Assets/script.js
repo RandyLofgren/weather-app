@@ -39,12 +39,12 @@ function displayCityInfo() {
     }).then(function (UVResponse) {
       $(".uv-indexapi").text("UV Index: " + UVResponse.value);
       if (UVResponse.value < 2.01) {
-        $(".uv-indexapi").addClass(greenBack);
+        $(".uv-indexapi").addClass("greenBack rounded");
       } else if (UVResponse.value < 5.01) {
-        $(".uv-indexapi").addClass(yellowBack);
+        $(".uv-indexapi").addClass("yellowBack rounded");
       } else if (UVResponse.value < 7.01) {
-        $(".uv-indexapi").addClass(orangeBack);
-      } $(".uv-indexapi").addClass(redBack);
+        $(".uv-indexapi").addClass("orangeBack rounded");
+      } else if(UVResponse.value > 7.00) $(".uv-indexapi").addClass("redBack rounded");
     })
 
 
@@ -57,6 +57,7 @@ function displayCityInfo() {
 function renderButtons() {
 
   $("#buttons-view").empty();
+  
   var savedCities = JSON.parse(localStorage.getItem("addedCity"))
   if (savedCities !== null) {
     cities = savedCities
@@ -84,6 +85,7 @@ $("#sub-city").on("click", function (event) {
 });
 
 function fiveCityInfo() {
+  $("#fiveDayCast").empty();
 
   var city = $(this).attr("data-name");
   var APIKey = "3047b4fdf5e4cef615044702d2f6aa10";
@@ -110,9 +112,12 @@ function fiveCityInfo() {
       cloudImage = $("<img>")
       cloudImage.attr("src", results[i].weather.icon)
       fiveDayDiv.append(cloudImage)
-      // ptemp= $("<p>")
-      // ptemp.text("Temp: " + results[i].main.temp + "\u00B0F")
-      // $(".five-day").append(ptemp)
+      ptemp= $("<h6>")
+      ptemp.text("Temp: " + results[i].main.temp + "\u00B0F")
+      fiveDayDiv.append(ptemp)
+      phum= $("<h5>")
+      phum.text("Humidity: " + results[i].main.humidity + "%")
+      fiveDayDiv.append(phum)
 
 
 

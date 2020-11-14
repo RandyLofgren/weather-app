@@ -17,11 +17,11 @@
 }
 
 .greenBack{
-    color: green;
+    background-color: green;
 }
 
 .yellowBack{
-    color: yellow;
+    background-color: yellow;
 }
 
 .orangeBack{
@@ -31,3 +31,14 @@
 .redBack{
     background-color: red;
 }
+
+h5{
+    font-size: 15px;
+}
+  h6{
+      font-size: 15px;
+  }
+
+  .uv-indexapi{
+      width: 18%;
+  }
