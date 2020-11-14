@@ -17,9 +17,9 @@ function displayCityInfo() {
   }).then(function (response) {
 
     var iconGrab = (response.weather[0].icon);
-    var icon = "http://openweathermap.org/img/wn/" + iconGrab + "@2x.png";
+     var icon = "http://openweathermap.org/img/wn/" + iconGrab + "@2x.png";
     var myDate = new Date();
-     var myDateString = myDate.toLocaleString()
+    //  var myDateString = myDate.toLocaleString()
      
      
     $("#cloudIcon").attr("src", icon);
@@ -104,20 +104,21 @@ function fiveCityInfo() {
     var currentDate = new Date().getDate();
     var currentMonth =new Date().getMonth();
     var currentYear = new Date().getFullYear()
-    var currentTime = currentDate + currentMonth;
+    // var currentTime = currentDate + currentMonth;
     
 
-    for (var i = 7; i < 40; i = i + 7) {
+    for (var i = 7; i < 40; i = i + 8) {
+      
       fiveDayDiv = $("<div>");
       p = $("<p>");
-      p.text(((currentMonth+1) +'/' + (currentDate+i/7) + '/' + currentYear));
+      p.text(((currentMonth+1) +'/' + ((currentDate+i/8)+.125) + '/' + currentYear));
       fiveDayDiv.addClass("col");
       fiveDayDiv.addClass("five-day");
       fiveDayDiv.addClass("rounded");
       fiveDayDiv.append(p);
       $("#fiveDayCast").append(fiveDayDiv);
       cloudImage = $("<img>")
-      cloudImage.attr("src", results[i].weather.icon);
+      cloudImage.attr("src", results[i].weather.icon);  //need help here
       fiveDayDiv.append(cloudImage)
       ptemp= $("<h6>")
       ptemp.text("Temp: " + results[i].main.temp + "\u00B0F");
