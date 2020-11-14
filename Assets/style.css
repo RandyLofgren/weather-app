@@ -5,3 +5,29 @@
     padding:5px;
     color:black
 }
+.five-day{
+    background-color: rgb(88, 137, 228);
+    margin: 5px;
+
+}
+
+.city-border{
+    margin: 5px;
+    border: 1px dotted black;
+}
+
+.greenBack{
+    color: green;
+}
+
+.yellowBack{
+    color: yellow;
+}
+
+.orangeBack{
+    background-color:orange;
+}
+
+.redBack{
+    background-color: red;
+}
