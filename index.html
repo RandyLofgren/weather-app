@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -32,8 +32,8 @@
                     <form class="form-inline">
                         <input class="form-control mr-sm-2" id="add-city" type="search" placeholder="Search City"
                             aria-label="Search">
-                        <input class="btn add-city" id="sub-city" type="submit"> 
-                        <i class="fas fa-search"></i>
+                        <button class="btn add-city" id="sub-city" type="submit"> 
+                        <i class="fas fa-search"></i></button>
                     </input>
                     </form>
                 </nav>
@@ -47,7 +47,7 @@
                         </div>
 
                     </div>
-                    <img id="cloudIcon">
+                    <!-- <img id="cloudIcon"> -->
                     <div class="tempapi">Wind</div>
                     <div class="humidityapi">Humidity</div>
                     <div class="windapi">Temp</div>
@@ -69,8 +69,8 @@
 
     </div>
 
-    <script src="./Assets/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./Assets/script.js"></script>
 
 </body>
 
