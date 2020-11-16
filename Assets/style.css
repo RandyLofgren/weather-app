@@ -51,3 +51,13 @@ h5{
   p{
       color: white;
   }
+
+  .bigger-five-day{
+      font-size: 20px;
+      font-weight: bold;
+
+  }
+
+  #sub-city{
+      background-color: rgb(118, 181, 233);
+  }

@@ -105,9 +105,9 @@ function fiveCityInfo(city) {
   }).then(function (fiveresponse) {
     console.log(fiveresponse)
     results = fiveresponse.list
-    var currentDate = new Date().getDate();
-    var currentMonth = new Date().getMonth();
-    var currentYear = new Date().getFullYear()
+    // var currentDate = new Date().getDate();
+    // var currentMonth = new Date().getMonth();
+    // var currentYear = new Date().getFullYear()
     // var currentTime = currentDate + currentMonth;
 
 
