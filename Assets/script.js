@@ -93,7 +93,7 @@ $("#sub-city").on("click", function (event) {
 function fiveCityInfo(city) {
   $("#fiveDayCast").empty();
 
-  // var city = $(this).attr("data-name");
+  
   var APIKey = "3047b4fdf5e4cef615044702d2f6aa10";
   var fiveURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + APIKey;
 
@@ -105,10 +105,7 @@ function fiveCityInfo(city) {
   }).then(function (fiveresponse) {
     console.log(fiveresponse)
     results = fiveresponse.list
-    // var currentDate = new Date().getDate();
-    // var currentMonth = new Date().getMonth();
-    // var currentYear = new Date().getFullYear()
-    // var currentTime = currentDate + currentMonth;
+ 
 
 
     for (var i = 0; i < results.length; i++) {
